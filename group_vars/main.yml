@@ -1,0 +1,73 @@
+install_homebrew_ctf: false
+install_homebrew_cask_extra: false
+
+homebrew_packages:
+  - bash-completion
+  - byobu
+  - dark-mode
+  - dockutil # Tool for managing dock items
+  - gdb
+  - git
+  - git-lfs
+  - go
+  - ghi      # Work on GitHub issues on the command-line
+  - httpie   # User-friendly cURL replacement
+  - hub      # Add GitHub support to git on the command-line
+  - lynx
+  - links2
+  - nmap
+  - openssh
+  - openssl
+  - openvpn
+  - p7zip
+  - pv       # Monitor data's progress through a pipe
+  - python
+  - qemu
+  - readline # Library for command-line editing
+  - socat 
+  - sqlite
+  - vim
+  - w3m
+  - wget
+# - cowsay
+
+homebrew_packages_ctf:
+  - fcrackzip
+  - foremost
+  - hexedit
+  - pngcheck
+  - pwntools
+  - radare2
+  - unicorn
+  - docker
+
+homebrew_cask_apps:
+  - dropbox
+  - google-chrome
+  - iterm2
+  - slack
+  - spectacle
+  - virtualbox
+  - vmware-fusion
+  - vmware-remote-console
+# - firefox
+# - sublime-text
+ 
+homebrew_cask_extra: 
+  - cutter
+  - docker
+  - google-drive
+  - lastpass
+  - macvim
+  - powershell
+  - transmit
+  - vagrant
+  - vmware-horizon-client
+
+pip_packages:
+  - numpy
+  - requests
+  - unicorn
+
+gem_packages:
+  - zsteg

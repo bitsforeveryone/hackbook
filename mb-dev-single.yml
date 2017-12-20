@@ -1,0 +1,42 @@
+---
+- name: install MacBook dev environment
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - group_vars/main.yml
+  
+  tasks:
+
+    - name: install homebrew packages ( common )
+      homebrew:
+        update_homebrew: yes
+        name: "{{ item }}"
+      with_items: "{{ homebrew_packages }}"
+
+    - name: install homebrew packages ( CTF )
+      homebrew:
+        name: "{{ item }}"
+      with_items: "{{ homebrew_package_ctf }}"
+      when: install_homebrew_ctf
+
+    - name: install hombrew cask apps
+      homebrew_cask:
+        name: "{{ item }}"
+      with_items: "{{ homebrew_cask_apps }}"
+    
+    - name: install hombrew cask apps ( extra )
+      homebrew_cask:
+        name: "{{ item }}"
+      with_items: "{{ homebrew_cask_extra }}" 
+      when: install_homebrew_cask_extra 
+  
+    - name: install pip packages
+      pip: 
+        name= "{{ item }}" 
+        state=present
+      with_items: "{{ pip_packages }}"
+  
+    - name: install gem packages
+      gem: name= "{{ item }}" state=present
+      with_items: "{{ gem_packages }}"
