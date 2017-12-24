@@ -2,6 +2,7 @@ install_homebrew_ctf: false
 install_homebrew_cask_extra: false
 
 homebrew_packages:
+  - zsh
   - bash-completion
   - byobu
   - dark-mode
@@ -14,7 +15,6 @@ homebrew_packages:
   - httpie   # User-friendly cURL replacement
   - hub      # Add GitHub support to git on the command-line
   - lynx
-  - links2
   - nmap
   - openssh
   - openssl
@@ -68,6 +68,7 @@ pip_packages:
   - numpy
   - requests
   - unicorn
+  - virtualenvwrapper
 
 gem_packages:
   - zsteg
