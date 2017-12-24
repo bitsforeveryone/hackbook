@@ -1,17 +1,21 @@
 install_homebrew_ctf: false
 install_homebrew_cask_extra: false
 
+homebrew_taps:
+  - caskroom/versions
+
 homebrew_packages:
   - zsh
   - bash-completion
   - byobu
-  - dark-mode
+  - dark-mode # Control the macOS dark mode from the command-line
   - dockutil # Tool for managing dock items
   - gdb
   - git
   - git-lfs
   - go
   - ghi      # Work on GitHub issues on the command-line
+  - grc      # Colorize logfiles and command output
   - httpie   # User-friendly cURL replacement
   - hub      # Add GitHub support to git on the command-line
   - lynx
@@ -26,6 +30,7 @@ homebrew_packages:
   - readline # Library for command-line editing
   - socat 
   - sqlite
+  - tree     # Display directories as trees
   - vim
   - w3m
   - wget
@@ -45,6 +50,7 @@ homebrew_cask_apps:
   - dropbox
   - google-chrome
   - iterm2
+  - microsoft-remote-desktop-beta
   - slack
   - spectacle
   - virtualbox

@@ -8,10 +8,17 @@
   
   tasks:
 
+    -name: add homebrew taps
+      homebrew_tap:
+        name: "{ item }}"
+        state: present
+      with_items: "{{ homebrew_taps }}"
+
     - name: install homebrew packages ( common )
       homebrew:
         update_homebrew: yes
         name: "{{ item }}"
+        state: present
       with_items: "{{ homebrew_packages }}"
 
     - name: install homebrew packages ( CTF )
