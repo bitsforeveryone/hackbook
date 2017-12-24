@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 # Install Xcode Command Line Tools
-xcode-select --install
+declare xcode_installed=`xcode-select --install 2>&1 | grep 'already installed'`
+if [ -z "$xcode_installed" ]; then
+  xcode-select --install
+else
+  echo "XCode commnd line tools installed"
+fi
 
 # Install PIP, if not already installed
 which pip > /dev/null || echo "[*] Installing python pip"
