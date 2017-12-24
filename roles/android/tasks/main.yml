@@ -1,0 +1,17 @@
+-name: install android development
+  homebrew:
+    name: {{ item }}
+    state: present
+  with_items:
+    - ant
+    - maven
+    - gradle
+
+-name: install android development
+  homebrew_cask:
+    name: {{ item }}
+    state: present
+  with_items:
+    - android_sdk
+    - android_ndk
+    - caskroom/versions/java8

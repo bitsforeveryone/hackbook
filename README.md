@@ -2,13 +2,20 @@
 
 This playbook will automate the setup of your MacBook to ensure you have necessary tools for hacking.  It is meant to be configurable, and to help introduce useful tools.
 
-*Ideas stolen from*:
-    - [geerlingguy][mac-dev-setup]
-    - [donnemartin][dev-setup]
+*Ideas stolen from*:  
+- [geerlingguy][mac-dev-setup]  
+- [donnemartin][dev-setup]  
 
 ## Installation
 
-## Overriding Defaults / Enabling Packages and Features
+From a default install of OS X, you need `git` installed to start.  Install the XCode command line tools, then clone the repo.
+1. `xcode-select --install`
+2. `git clone https://github.com/bitsforeveryone.com/hackbook`
+3. `cd hackbook && ./go.sh`
+
+## Overriding Defaults / Enabling Packages and FeaturesA
+
+Defaults are in the variables file `group_vars/main.yml` file.  Edit this file by turning options on/off with `true`/`false` or by commenting/uncommenting packages to be installed.
 
 ## Included Applications / Configuration (Default)
 

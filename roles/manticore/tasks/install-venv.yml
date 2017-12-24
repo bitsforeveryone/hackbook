@@ -1,0 +1,10 @@
+---
+--pip:
+  name: virtualenv
+    state: present
+
+- pip:
+  name: manticore
+  virtualenv: ~/.virtualenvs/manticore
+  virtualenv_site_packages: yes
+  virtualenv_python: python2
