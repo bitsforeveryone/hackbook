@@ -5,6 +5,7 @@ This playbook will automate the setup of your MacBook to ensure you have necessa
 *Ideas stolen from*:  
 - [geerlingguy][mac-dev-setup]  
 - [donnemartin][dev-setup]  
+- [mpereira][macbook-playbook]
 
 ## Installation
 
@@ -78,3 +79,4 @@ Packages (installed with Homebrew):
 [mac-dev-setup]: https://github.com/geerlingguy/mac-dev-playbook
 [dev-setup]: https://github.com/donnemartin/dev-setup
 [automating-with-ansible]: http://www.nickhammond.com/automating-development-environment-ansible/
+[macbook-playbook]: https://github.com/mpereira/macbook-playbook
