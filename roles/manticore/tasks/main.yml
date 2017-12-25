@@ -1,0 +1,13 @@
+---
+- pip:
+    name: "{{ item }}"
+    state: present
+  with_items: 
+    - virtualenv
+    - virtualenvwrapper
+
+- pip:
+    name: manticore
+    virtualenv: ~/.virtualenvs/manticore
+    virtualenv_site_packages: yes
+    virtualenv_python: python2

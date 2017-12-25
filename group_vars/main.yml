@@ -1,6 +1,10 @@
 install_homebrew_ctf: false
 install_homebrew_cask_extra: false
 
+user:  "{{ ansible_user_id }}"
+home_directory: "/Users/{{ user }}"
+downloads_directory: "{{ home_directory }}/.ansible/downloads"
+
 homebrew_taps:
   - caskroom/versions
 
