@@ -1,6 +1,6 @@
 -name: install android development
   homebrew:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - ant
@@ -9,7 +9,7 @@
 
 -name: install android development
   homebrew_cask:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - android_sdk

@@ -1,4 +1,4 @@
-# Mac Hacking Ansible Playbook
+# Mac Hacking Ansible Playbook [![Build Status](https://travis-ci.org/bitsforeveryone/hackbook.svg?branch=master)](https://travis-ci.org/bitsforeveryone/hackbook)
 
 This playbook will automate the setup of your MacBook to ensure you have necessary tools for hacking.  It is meant to be configurable, and to help introduce useful tools.
 
@@ -58,8 +58,8 @@ Applications (installed with Homebrew Cask):
 
   - [nvALT](http://brettterpstra.com/projects/nvalt/)
   - [Sublime Text](https://www.sublimetext.com/)
-  - [cutter]()
-  - [powershell]()
+  - [cutter](https://github.com/radareorg/cutter/)
+  - [powershell](https://github.com/PowerShell/PowerShell)
   - [vagrant]()
 
 Packages (installed with Homebrew):

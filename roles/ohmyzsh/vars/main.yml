@@ -2,8 +2,8 @@
 
 # Choose user who you want to install oh my zsh for
 ohmyzsh_users:
-  - username: root 
-    usergroup: root
-    home: /root
+  - username: "{{ user }}" 
+    usergroup: "{{ user }}" 
+    home: "{{ home_directory }}" 
 
 ohmyzsh_plugins: git brew colored-man-page colorize extract history httpie zsh-syntax-highlighting
