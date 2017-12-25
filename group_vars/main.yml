@@ -61,14 +61,12 @@ homebrew_cask_apps:
  
 homebrew_cask_extra: 
   - cutter
-  - docker
   - google-drive
   - lastpass
   - macvim
   - powershell
   - transmit
   - vagrant
-  - vmware-horizon-client
 
 pip_packages:
   - numpy
