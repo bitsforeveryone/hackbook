@@ -1,12 +1,21 @@
 ---
-- pip:
+- name: install dependencies
+  pip:
     name: "{{ item }}"
     state: present
   with_items: 
     - virtualenv
     - virtualenvwrapper
+ 
+- name: Ensure the virtualenv directory exists
+  file: >
+    path=~/.virtualenvs
+    state=directory
+    owner={{ user }}
+  become: no      
 
-- pip:
+- name: install manticore in virtualenv
+  pip:
     name: manticore
     virtualenv: ~/.virtualenvs/manticore
     virtualenv_site_packages: yes

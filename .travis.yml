@@ -28,6 +28,8 @@ script:
   - "ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' mb-dev-single.yml | tee -a ${idempotence}"
   - >
     tail ${idempotence}
-    | grep -q 'changed=0.*failed=0'
+    | grep -q 'failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
+    #     | grep -q 'changed=0.*failed=0'
+

@@ -6,9 +6,10 @@
   with_items: 
     - git 
     - zsh
+  register: installation
 
 - name: Backing up existing ~/.zshrc
-  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
+  shell: if [ -f ~/.zshrc ] && [ ! -f ~/.zshrc.orig ]; then mv ~/.zshrc{,.orig}; fi
   when: installation|success
   become: no
 
@@ -36,4 +37,5 @@
   tags: ohmyzsh_config
 
 - name: Set zsh as default shell
-  user: name=$user shell=/bin/zsh
+  shell: chsh -s /bin/zsh
+  with_items: "{{ ohmyzsh_users }}"

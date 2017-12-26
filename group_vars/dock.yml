@@ -13,24 +13,27 @@ dockitems_to_remove:
   - Calendar
  
 dockitems_to_persist:
-  - name: Google Chrome
-    path: "/Applications/Google Chrome.app"
+  - name: Launchpad
+    path: /Applications/Launchpad.app
     pos: 1
-  - name: Firefox
-    path: "/Applications/Firefox.app"
-    pos: 2
-  - name: VMware Fusion
-    path: /Applications/VMware Fusion.app
-    pos: 3
-  - name: Slack
-    path: /Applications/Slack.app
-    pos: 4
-  - name: VirtualBox
-    path: /Applications/VirtualBox.app
-    pos: 5
   - name: Terminal
     path: /Applications/Utilities/Terminal.app
+    pos: 2
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 3
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 4
+  - name: VMware Fusion
+    path: /Applications/VMware Fusion.app
+    pos: 5
+  - name: Slack
+    path: /Applications/Slack.app
     pos: 6
-  - name: Binary Ninja
-    path: /Applications/Binary Ninja.app
+  - name: VirtualBox
+    path: /Applications/VirtualBox.app
     pos: 7
+  - name: Binary Ninja
+    path: "/Applications/Binary Ninja.app"
+    pos: 8

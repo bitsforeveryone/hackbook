@@ -26,7 +26,7 @@
       homebrew:
         name: "{{ item }}"
         state: present
-      with_items: "{{ homebrew_package_ctf }}"
+      with_items: "{{ homebrew_packages_ctf }}"
       when: install_homebrew_ctf
 
     - name: install hombrew cask apps
@@ -67,3 +67,5 @@
 
   roles:
     - manticore
+    - vmware
+    - ohmyzsh
