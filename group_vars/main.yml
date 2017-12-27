@@ -1,5 +1,5 @@
 install_homebrew_ctf: true
-install_homebrew_cask_extra: true 
+install_homebrew_cask_extra: false
 configure_dock: true 
 
 user:  "{{ ansible_user_id }}"
@@ -53,7 +53,6 @@ homebrew_packages_ctf:
   - docker
 
 homebrew_cask_apps:
-  - dropbox
   - google-chrome
   - iterm2
   - microsoft-remote-desktop-beta
@@ -62,15 +61,16 @@ homebrew_cask_apps:
   - virtualbox
   - vmware-fusion
   - vmware-remote-console
-  - firefox
-  - sublime-text
  
 homebrew_cask_extra: 
   - cutter
+  - dropbox
+  - firefox
   - google-backup-and-sync
   - lastpass
   - macvim
   - powershell
+  - sublime-text
   - transmit
   - vagrant
 
