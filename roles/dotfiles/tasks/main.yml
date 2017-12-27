@@ -1,0 +1,13 @@
+---
+- name: Template gitconfig into home folder.
+  template:
+    src: gitconfig.j2
+    dest: "{{ dotfiles_home }}/.gitconfig"
+  become: no
+
+- name: Link dotfiles into home folder.
+  copy:
+    src: "{{ item }}"
+    dest: "{{ dotfiles_home }}/.{{ item }}"
+  become: no
+  with_items: "{{ dotfiles_files }}"

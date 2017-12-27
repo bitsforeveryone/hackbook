@@ -7,8 +7,11 @@
     - group_vars/dock.yml
 
   roles:
-    - common
-    - vmware
-    - manticore
-    - ohmyzsh 
+   - common
+   - vmware
+   - manticore
+   - dotfiles
+#  - ohmyzsh
+#  - passwordless-sudo
+#  - android
 

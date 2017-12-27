@@ -72,7 +72,9 @@
       when: configure_dock
 
   roles:
+    - dotfiles
     - passwordless-sudo
     - manticore
-    - vmware
-    - { role: ohmyzsh, tags: shell }
+    - ohmyzsh
+#   - vmware
+#   - { role: android, tags: android }

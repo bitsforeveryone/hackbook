@@ -1,5 +1,5 @@
 ---
-- name:
+- name: install dependencies (git, zsh)
   homebrew:
     name: "{{ item }}" 
     state: present
@@ -19,14 +19,12 @@
     src: zshrc.j2
     dest: "{{ item.home }}/.zshrc"
   with_items: "{{ ohmyzsh_users }}"
-  when:
-    - cloning|success
-  tags: ohmyzsh_config
 
 - name: read current shell
   shell: dscl . -read ~ UserShell | cut -d ' ' -f 2
+  check_mode: no
   register: current_login_shell
-  changed_when: false
+  changed_when: False
 
 - name: Set login shell (dscl)
   shell: dscl . -create "{{ home_directory }}"  UserShell "{{ preferred_shell }}"

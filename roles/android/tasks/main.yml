@@ -1,4 +1,5 @@
--name: install android development
+---
+- name: install android development
   homebrew:
     name: "{{ item }}"
     state: present
@@ -7,7 +8,7 @@
     - maven
     - gradle
 
--name: install android development
+- name: install android development
   homebrew_cask:
     name: "{{ item }}"
     state: present

@@ -1,0 +1,16 @@
+# git config user.name
+gitconfig_name: "Bits For Everyone"
+# git config user.email
+gitconfig_email: "admin@bitsforeveryone.com"
+
+# GitHub Username
+gitconfig_user: "bitsforeveryone"
+
+dotfiles_home: "~"
+dotfiles_files:
+  - bash_profile
+  - gitignore
+  - inputrc
+  - vimrc
+  - gdbinit
+  - aliases
