@@ -8,34 +8,27 @@
     - zsh
   register: installation
 
-- name: Backing up existing ~/.zshrc
-  shell: if [ -f ~/.zshrc ] && [ ! -f ~/.zshrc.orig ]; then mv ~/.zshrc{,.orig}; fi
-  when: installation|success
-  become: no
-
 - name: Cloning  oh-my-zsh
   git:
     repo=https://github.com/robbyrussell/oh-my-zsh
     dest=~/.oh-my-zsh
-  when: installation|success
   register: cloning
-  become: no
-
-- name: Creating new ~/.zshrc
-  copy:
-    src=~/.oh-my-zsh/templates/zshrc.zsh-template
-    dest=~/.zshrc
-  when: cloning|success
-  become: no
-
 
 - name: creating new ~/.zshrc
   template:
     src: zshrc.j2
     dest: "{{ item.home }}/.zshrc"
   with_items: "{{ ohmyzsh_users }}"
+  when:
+    - cloning|success
   tags: ohmyzsh_config
 
-- name: Set zsh as default shell
-  shell: chsh -s /bin/zsh
-  with_items: "{{ ohmyzsh_users }}"
+- name: read current shell
+  shell: dscl . -read ~ UserShell | cut -d ' ' -f 2
+  register: current_login_shell
+  changed_when: false
+
+- name: Set login shell (dscl)
+  shell: dscl . -create "{{ home_directory }}"  UserShell "{{ preferred_shell }}"
+  when: current_login_shell.stdout != preferred_shell
+  become: true

@@ -1,5 +1,6 @@
-install_homebrew_ctf: false
-install_homebrew_cask_extra: false
+install_homebrew_ctf: true
+install_homebrew_cask_extra: true 
+configure_dock: true 
 
 user:  "{{ ansible_user_id }}"
 home_directory: "/Users/{{ user }}"
@@ -20,6 +21,7 @@ homebrew_packages:
   - go
   - ghi      # Work on GitHub issues on the command-line
   - grc      # Colorize logfiles and command output
+  - htop
   - httpie   # User-friendly cURL replacement
   - hub      # Add GitHub support to git on the command-line
   - lynx
@@ -60,12 +62,12 @@ homebrew_cask_apps:
   - virtualbox
   - vmware-fusion
   - vmware-remote-console
-# - firefox
-# - sublime-text
+  - firefox
+  - sublime-text
  
 homebrew_cask_extra: 
   - cutter
-  - google-drive
+  - google-backup-and-sync
   - lastpass
   - macvim
   - powershell

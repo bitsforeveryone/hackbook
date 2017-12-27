@@ -53,19 +53,23 @@
       with_items: "{{ gem_packages }}"
 
     - name: Remove all crap from Dock
-      shell: dockutil --remove '{{ item }}'
+      shell: dockutil --find '{{ item }}' && dockutil --remove '{{ item }}' --no-restart
       ignore_errors: true
       with_items: "{{ dockitems_to_remove }}"
+      when: configure_dock
     
     - name: Check if items in dock exist
-      shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
+      shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}' --no-restart
       with_items: "{{ dockitems_to_persist }}"
+      when: configure_dock
     
     - name: Fix dock order
-      shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
+      shell: dockutil --move '{{ item.name }}' --position '{{ item.pos }}' --no-restart
       with_items: "{{ dockitems_to_persist }}"
+      when: configure_dock
 
   roles:
+    - passwordless-sudo
     - manticore
     - vmware
-    - ohmyzsh
+    - { role: ohmyzsh, tags: shell }
