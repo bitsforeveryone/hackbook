@@ -68,7 +68,6 @@ homebrew_cask_extra:
   - firefox
   - google-backup-and-sync
   - lastpass
-  - macvim
   - powershell
   - sublime-text
   - transmit
