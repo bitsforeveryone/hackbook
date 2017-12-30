@@ -1,0 +1,6 @@
+---
+- name: install hombrew cask apps ( extra )
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items: "{{ homebrew_cask_extra }}"
+  when: install_homebrew_cask_extra

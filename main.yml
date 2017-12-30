@@ -11,6 +11,8 @@
    - vmware
    - manticore
    - dotfiles
+   - brew-cask-extra
+   - ctf-packages
 #  - ohmyzsh
 #  - passwordless-sudo
 #  - android
