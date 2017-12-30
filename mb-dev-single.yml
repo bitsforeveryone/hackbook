@@ -52,29 +52,11 @@
         state: present
       with_items: "{{ gem_packages }}"
 
-    - name: Remove all crap from Dock
-      shell: dockutil --remove '{{ item }}' --no-restart > /dev/null
-      ignore_errors: true
-      with_items: "{{ dockitems_to_remove }}"
-      changed_when: false
-      when: configure_dock
-    
-    - name: Check if items in dock exist
-      shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}' --no-restart
-      with_items: "{{ dockitems_to_persist }}"
-      changed_when: false
-      when: configure_dock
-    
-    - name: Fix dock order
-      shell: dockutil --move '{{ item.name }}' --position '{{ item.pos }}' --no-restart
-      with_items: "{{ dockitems_to_persist }}"
-      changed_when: false
-      when: configure_dock
-
   roles:
     - dotfiles
     - passwordless-sudo
     - manticore
     - ohmyzsh
+#   - dock
 #   - vmware
 #   - { role: android, tags: android }

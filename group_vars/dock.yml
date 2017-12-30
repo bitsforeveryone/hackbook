@@ -11,6 +11,8 @@ dockitems_to_remove:
   - iBooks
   - App Store
   - Calendar
+  - Photo Booth
+  - Siri
  
 dockitems_to_persist:
   - name: Launchpad

@@ -1,5 +1,12 @@
 ---
-- name: install android development
+- name: install java 
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - java8
+
+- name: install java development
   homebrew:
     name: "{{ item }}"
     state: present
@@ -13,6 +20,6 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - android_sdk
-    - android_ndk
-    - caskroom/versions/java8
+    - java8
+    - android-sdk
+    - android-ndk
