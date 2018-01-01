@@ -8,13 +8,11 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Include alias file (if present) containing aliases for ssh, etc.
-if [ -f ~/.aliases ]
-then
+if [[ -f ~/.aliases ]]; then 
   source ~/.aliases
 fi
 
-if [ -f ~/.bash_aliases ]
-then
+if [[ -f ~/.bash_aliases ]]; then
   source ~/.bash_aliases
 fi
 
@@ -111,3 +109,9 @@ prod_command_trap () {
 shopt -s extdebug
 trap prod_command_trap DEBUG
 
+# Support for virtualenvwrapper if it exists
+if [[ -f /usr/local/bin/virtualenvwrapper.sh  ]]; then
+  VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+  export WORKON_HOME=~/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
+fi

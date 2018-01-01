@@ -86,3 +86,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+if [[ -f ~/.aliases ]]; then
+  source ~/.aliases 
+fi
+
+# Disable default cowsay in ansible
+export ANSIBLE_NOCOWS=1
+
+# Use the brew installed python if available
+if [[ -f /usr/local/opt/python/libexec/bin/python ]]; then
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+fi 
+
+# Support for virtualenvwrapper if it exists
+if [[ -f /usr/local/bin/virtualenvwrapper.sh  ]]; then
+  VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+  export WORKON_HOME=~/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
+fi

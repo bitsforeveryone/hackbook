@@ -10,10 +10,12 @@
    - common
    - vmware
    - manticore
+#  - brew-cask-extra
+#  - ctf-packages
+#  - role: ohmyzsh
+#  - role: ida-pro-demo
+#  - role: BinaryNinja
+#  - role: passwordless-sudo
+#  - role: android
    - dotfiles
-   - brew-cask-extra
-   - ctf-packages
-#  - ohmyzsh
-#  - passwordless-sudo
-#  - android
 

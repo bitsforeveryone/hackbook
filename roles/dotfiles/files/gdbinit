@@ -1,2 +1,4 @@
 set disassembly-flavor intel
 
+# optionally turn on peda
+# source ~/.peda/peda.py

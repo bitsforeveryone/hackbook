@@ -8,22 +8,11 @@
     - virtualenvwrapper
  
 - name: Ensure the virtualenv directory exists
-  file: >
-    path: "{{ virtualenvwrapper_home }}"
-    state=directory
-    owner={{ user }}
+  file: 
+    path: "{{ virtualenv_home }}"
+    state: directory
+    owner: "{{ user }}"
   become: no      
-
-- name: Ensure virtualenv variables are defined in bashrc
-  blockinfile:
-    path: "{{ virtualenvwrapper_shell_file }}" 
-    block: |
-      {{ item }}
-    marker: "#  {mark} ANSIBLE MANAGED BLOCK virtualenvwrapper "
-  with_items:
-    - "VIRTUALENVWRAPPER_PYTHON={{ virtualenvwrapper_python }}"
-    - "export WORKON_HOME={{ virtualenvwrapper_home }}"
-    - "source /usr/local/bin/virtualenvwrapper.sh" 
 
 - name: install manticore in virtualenv
   pip:

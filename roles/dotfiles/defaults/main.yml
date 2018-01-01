@@ -3,9 +3,13 @@
 gitconfig_name: "Bits For Everyone"
 # git config user.email
 gitconfig_email: "admin@bitsforeveryone.com"
-
 # GitHub Username
 gitconfig_user: "bitsforeveryone"
+
+## virtualenvwrapper variables
+virtualenvwrapper_home: ~/.virtualenvs
+virtualenvwrapper_python: /usr/local/bin/python2
+virtualenvwrapper_shell_file: ~./bashrc
 
 dotfiles_home: "~"
 dotfiles_files:

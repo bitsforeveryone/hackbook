@@ -2,9 +2,20 @@ install_homebrew_ctf: true
 install_homebrew_cask_extra: false
 configure_dock: true 
 
+## Preferred shell (also login shell)
+preferred_shell: /usr/local/bin/bash
+
 user:  "{{ ansible_user_id }}"
 home_directory: "/Users/{{ user }}"
 downloads_directory: "{{ home_directory }}/.ansible/downloads"
+
+## .gitconfig variables
+# git config user.name
+# gitconfig_name: "Bits For Everyone"
+# git config user.email
+# gitconfig_email: "admin@bitsforeveryone.com"
+# GitHub Username
+# gitconfig_user: "bitsforeveryone"
 
 homebrew_taps:
   - caskroom/versions
