@@ -3,7 +3,6 @@
   connection: local
 
   vars_files:
-    - group_vars/main.yml
     - group_vars/dock.yml
 
   roles:
