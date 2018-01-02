@@ -1,4 +1,10 @@
 ---
+- name: Add eecs.net as trusted root authority
+  command: security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain eecsNET-CA.cer 
+  become: yes
+  when: add_trusted_root_cert
+  changed_when: False
+
 - name: add homebrew taps
   homebrew_tap:
     name: "{{ item }}" 

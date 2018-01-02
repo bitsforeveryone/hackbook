@@ -1,6 +1,7 @@
 install_homebrew_ctf: true
 install_homebrew_cask_extra: false
 configure_dock: true 
+add_trusted_root_cert: false
 
 ## Preferred shell (also login shell)
 preferred_shell: /usr/local/bin/bash
