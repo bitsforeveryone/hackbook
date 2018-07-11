@@ -4,6 +4,8 @@
   become: yes
   when: add_trusted_root_cert
   changed_when: False
+  tags:
+    - skipci
 
 - name: add homebrew taps
   homebrew_tap:

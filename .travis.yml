@@ -39,7 +39,7 @@ script:
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
-  - "ansible-playbook mb-dev-single.yml --skip-tags skipci | tee -a ${idempotence}"
+  - "ansible-playbook main.yml --skip-tags skipci | tee -a ${idempotence}"
   - >
     tail ${idempotence}
     | grep -q 'failed=0'
