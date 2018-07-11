@@ -8,16 +8,15 @@ osx_image: xcode9.3
 before_install:
   # Check Python version
   - which python
-  - ls -l $(which python)
-  - python --version
   
   # Update pip
-  - pip install -U pip
+  # - sudo -H pip install -U pip
     
   # Install Ansible.
   - sudo -H pip install ansible
   
   # Check version
+  - python --version
   - ansible --version
 
 
