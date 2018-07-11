@@ -9,13 +9,6 @@
   tags:
     - skipci
 
-- name: Ensure the virtualenv directory exists
-  file:
-    path: "{{ virtualenv_home }}"
-    state: directory
-    owner: "{{ user }}"
-  become: no
-
 - name: install manticore in virtualenv
   pip:
     name: manticore
