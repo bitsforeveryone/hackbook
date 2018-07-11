@@ -4,6 +4,8 @@
     src: gitconfig.j2
     dest: "{{ dotfiles_home }}/.gitconfig"
   become: no
+  tags:
+    - personal
 
 - name: Link dotfiles into home folder.
   copy:

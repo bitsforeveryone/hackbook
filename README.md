@@ -14,9 +14,9 @@ From a default install of OS X, you need `git` installed to start.  Install the 
 2. `git clone https://github.com/bitsforeveryone.com/hackbook`
 3. `cd hackbook && ./go.sh`
 
-## Overriding Defaults / Enabling Packages and FeaturesA
+## Overriding Defaults / Enabling Packages and Features
 
-Defaults are in the variables file [group_vars/main.yml](group_vars/main.yml) file.  Edit this file by turning options on/off with `true`/`false` or by commenting/uncommenting packages to be installed.
+Defaults are in the variables file [group_vars/all.yml](group_vars/all.yml) file.  Edit this file by turning options on/off with `true`/`false` or by commenting/uncommenting packages to be installed.
 
 ## Included Applications / Configuration (Default)
 
