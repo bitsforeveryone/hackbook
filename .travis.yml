@@ -1,12 +1,27 @@
 ---
 sudo: required
 language: objective-c
-# 10.12 (see  https://docs.travis-ci.com/user/reference/osx/ )
-osx_image: xcode9.2
+# 10.13 (see  https://docs.travis-ci.com/user/reference/osx/ )
+osx_image: xcode9.3
 
-install:
+
+before_install:
+  # Check Python version
+  - which python
+  - ls -l $(which python)
+  - python --version
+  
+  # Update pip
+  - pip install -U pip
+    
   # Install Ansible.
   - sudo -H pip install ansible
+  
+  # Check version
+  - ansible --version
+
+
+install:
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
@@ -32,4 +47,3 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
     #     | grep -q 'changed=0.*failed=0'
-

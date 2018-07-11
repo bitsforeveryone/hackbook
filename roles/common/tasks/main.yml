@@ -1,17 +1,17 @@
 ---
 - name: Add eecs.net as trusted root authority
-  command: security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain {{ role_path }}/files/eecsNET-CA.cer 
+  command: security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain {{ role_path }}/files/eecsNET-CA.cer
   become: yes
   when: add_trusted_root_cert
   changed_when: False
 
 - name: add homebrew taps
   homebrew_tap:
-    name: "{{ item }}" 
+    name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_taps }}"
 
-- name: install homebrew packages 
+- name: install homebrew packages
   homebrew:
     update_homebrew: yes
     name: "{{ item }}"
@@ -24,14 +24,14 @@
   with_items: "{{ homebrew_cask_apps }}"
 
 - name: install pip packages
-  pip: 
-    name: "{{ item }}" 
+  pip:
+    name: "{{ item }}"
     state: present
   with_items: "{{ pip_packages }}"
 
 - name: install gem packages
-  gem: 
-    name: "{{ item }}" 
+  gem:
+    name: "{{ item }}"
     state: present
   with_items: "{{ gem_packages }}"
 

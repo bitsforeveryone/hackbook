@@ -1,5 +1,5 @@
 ---
-- hosts: all 
+- hosts: all
   connection: local
 
   vars_files:

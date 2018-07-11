@@ -4,8 +4,8 @@
 preferred_shell: /usr/local/bin/zsh
 
 ohmyzsh_users:
-  - username: "{{ user }}" 
-    usergroup: "{{ user }}" 
-    home: "{{ home_directory }}" 
+  - username: "{{ user }}"
+    usergroup: "{{ user }}"
+    home: "{{ home_directory }}"
 
 ohmyzsh_plugins: git brew colored-man-page colorize extract history httpie zsh-syntax-highlighting

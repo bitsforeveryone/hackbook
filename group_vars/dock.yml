@@ -13,7 +13,7 @@ dockitems_to_remove:
   - Calendar
   - Photo Booth
   - Siri
- 
+
 dockitems_to_persist:
   - name: Launchpad
     path: /Applications/Launchpad.app

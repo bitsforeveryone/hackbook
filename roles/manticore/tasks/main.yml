@@ -3,16 +3,16 @@
   pip:
     name: "{{ item }}"
     state: present
-  with_items: 
+  with_items:
     - virtualenv
     - virtualenvwrapper
- 
+
 - name: Ensure the virtualenv directory exists
-  file: 
+  file:
     path: "{{ virtualenv_home }}"
     state: directory
     owner: "{{ user }}"
-  become: no      
+  become: no
 
 - name: install manticore in virtualenv
   pip:

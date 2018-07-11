@@ -1,6 +1,6 @@
 ---
 # tasks file for BinaryNinja
-- stat: 
+- stat:
     path: /Applications/{{ appName }}.app
   register: app_exists
 
@@ -11,8 +11,8 @@
     mode: 0755
   when: app_exists.stat.exists == false
 
-- get_url: 
-    url: "{{ dmgURL }}" 
+- get_url:
+    url: "{{ dmgURL }}"
     dest: ./tmp/{{ appName }}.dmg
   when: app_exists.stat.exists == False
 
@@ -20,7 +20,7 @@
   when: app_exists.stat.exists == False
 
 - name: find app file
-  find: 
+  find:
     paths: "./tmp/{{ appName }}"
     file_type: directory
     patterns: '*.app'
@@ -32,7 +32,7 @@
 
 - name: copy app to /Applications
   copy:
-    src: "{{ item.path }}" 
+    src: "{{ item.path }}"
     dest: "/Applications/"
   when:
     - app_exists.stat.exists == False
@@ -40,9 +40,9 @@
     - install_names|success
   with_items: "{{ install_names.files }}"
 
-- name: Install {{ appName }} pkg 
-  command: installer -allowUntrusted -pkg "./tmp/{{ appName }}/*.pkg" -target / 
-  when: 
+- name: Install {{ appName }} pkg
+  command: installer -allowUntrusted -pkg "./tmp/{{ appName }}/*.pkg" -target /
+  when:
     - app_exists.stat.exists == False
     - installer_type == 'pkg'
   become: yes

@@ -1,5 +1,6 @@
 ---
-- lineinfile:
+- name: Enable password-less sudo
+  lineinfile:
     path: "/etc/sudoers.d/{{ user }}"
     line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
     create: yes

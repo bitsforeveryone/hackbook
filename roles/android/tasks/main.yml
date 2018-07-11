@@ -1,5 +1,5 @@
 ---
-- name: install java 
+- name: install java
   homebrew_cask:
     name: "{{ item }}"
     state: present

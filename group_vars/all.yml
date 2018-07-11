@@ -1,12 +1,12 @@
 install_homebrew_ctf: true
 install_homebrew_cask_extra: false
-configure_dock: true 
+configure_dock: true
 add_trusted_root_cert: false
 
 ## Preferred shell (also login shell)
 preferred_shell: /usr/local/bin/bash
 
-user:  "{{ ansible_user_id }}"
+user: "{{ ansible_user_id }}"
 home_directory: "/Users/{{ user }}"
 downloads_directory: "{{ home_directory }}/.ansible/downloads"
 
@@ -25,8 +25,8 @@ homebrew_packages:
   - zsh
   - bash-completion
   - byobu
-  - dark-mode # Control the macOS dark mode from the command-line
-  - dockutil # Tool for managing dock items
+  - dark-mode   # Control the macOS dark mode from the command-line
+  - dockutil    # Tool for managing dock items
   - gdb
   - git
   - git-lfs
@@ -42,13 +42,13 @@ homebrew_packages:
   - openssl
   - openvpn
   - p7zip
-  - pv       # Monitor data's progress through a pipe
+  - pv        # Monitor data's progress through a pipe
   - python
   - qemu
-  - readline # Library for command-line editing
-  - socat 
+  - readline  # Library for command-line editing
+  - socat
   - sqlite
-  - tree     # Display directories as trees
+  - tree      # Display directories as trees
   - vim
   - w3m
   - wget
@@ -73,8 +73,8 @@ homebrew_cask_apps:
   - virtualbox
   - vmware-fusion
   - vmware-remote-console
- 
-homebrew_cask_extra: 
+
+homebrew_cask_extra:
   - cutter
   - dropbox
   - firefox

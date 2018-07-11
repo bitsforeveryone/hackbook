@@ -1,17 +1,17 @@
 ---
 - name: install dependencies (git, zsh)
   homebrew:
-    name: "{{ item }}" 
+    name: "{{ item }}"
     state: present
-  with_items: 
-    - git 
+  with_items:
+    - git
     - zsh
   register: installation
 
 - name: Cloning  oh-my-zsh
   git:
-    repo=https://github.com/robbyrussell/oh-my-zsh
-    dest=~/.oh-my-zsh
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
   register: cloning
 
 - name: creating new ~/.zshrc
