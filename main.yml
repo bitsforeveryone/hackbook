@@ -8,15 +8,16 @@
   roles:
    - common
    - vmware
+   - brew-cask-extra
+   - brew-cask-vm
+   - ctf-packages
    - manticore
-#  - brew-cask-extra
-#  - ctf-packages
-#  - role: ohmyzsh
-#  - role: ida-pro-free
+   - ohmyzsh
+#  - role: ida-pro-demo
 #    tags: ['IDA']
 #  - role: BinaryNinja
 #    tags: ['Binja']
-#  - role: passwordless-sudo
+   - role: passwordless-sudo
 #  - role: android
    - dotfiles
 

@@ -7,3 +7,6 @@
     - vmware-remote-console
     - vmware-horizon-client
     - vmware-fusion
+  tags:
+    - vmware
+    - skipci

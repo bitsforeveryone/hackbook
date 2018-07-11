@@ -1,6 +1,6 @@
 ---
 sudo: required
-language: objective-c
+language: generic
 # 10.13 (see  https://docs.travis-ci.com/user/reference/osx/ )
 osx_image: xcode9.3
 
@@ -32,14 +32,14 @@ install:
 
 script:
   # Check the role/playbook's syntax.
-  - "ansible-playbook mb-dev-single.yml --syntax-check"
+  - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "travis_wait 30 ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' mb-dev-single.yml"
+  - "travis_wait 30 ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml --skip-tags skipci"
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
-  - "ansible-playbook mb-dev-single.yml | tee -a ${idempotence}"
+  - "ansible-playbook mb-dev-single.yml --skip-tags skipci | tee -a ${idempotence}"
   - >
     tail ${idempotence}
     | grep -q 'failed=0'

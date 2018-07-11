@@ -5,6 +5,9 @@
     state: present
   with_items:
     - java8
+  tags:
+    - skipci
+    - android
 
 - name: install java development
   homebrew:
@@ -14,6 +17,9 @@
     - ant
     - maven
     - gradle
+  tags:
+    - skipci
+    - android
 
 - name: install android development
   homebrew_cask:
@@ -23,3 +29,6 @@
     - java8
     - android-sdk
     - android-ndk
+  tags:
+    - skipci
+    - android

@@ -1,0 +1,9 @@
+---
+- name: install hombrew cask apps ( vm )
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items: "{{ homebrew_cask_vm }}"
+  when: install_homebrew_cask_vm
+  tags:
+    - vm
+    - skipci

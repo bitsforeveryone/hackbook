@@ -1,7 +1,10 @@
+---
 install_homebrew_ctf: true
-install_homebrew_cask_extra: false
+install_homebrew_cask_ctf: true
+install_homebrew_cask_extra: true
+install_homebrew_cask_vm: true
 configure_dock: true
-add_trusted_root_cert: false
+add_trusted_root_cert: true
 
 ## Preferred shell (also login shell)
 preferred_shell: /usr/local/bin/bash
@@ -54,7 +57,30 @@ homebrew_packages:
   - wget
 # - cowsay
 
+homebrew_cask_apps:
+  - google-chrome
+  - iterm2
+  - slack
+  - spectacle
+
+homebrew_cask_vm:
+  - docker
+  - virtualbox
+  - vmware-fusion
+  - vmware-remote-console
+  - vagrant
+
+homebrew_cask_extra:
+  - dropbox
+  - firefox
+  - google-backup-and-sync
+  - lastpass
+  - microsoft-remote-desktop-beta
+  - powershell
+  - sublime-text
+
 homebrew_packages_ctf:
+  - cutter
   - fcrackzip
   - foremost
   - hexedit
@@ -62,27 +88,10 @@ homebrew_packages_ctf:
   - pwntools
   - radare2
   - unicorn
-  - docker
-
-homebrew_cask_apps:
-  - google-chrome
-  - iterm2
-  - microsoft-remote-desktop-beta
-  - slack
-  - spectacle
-  - virtualbox
-  - vmware-fusion
-  - vmware-remote-console
-
-homebrew_cask_extra:
-  - cutter
-  - dropbox
-  - firefox
-  - google-backup-and-sync
-  - lastpass
-  - powershell
-  - sublime-text
-  - vagrant
+    
+homebrew_cask_ctf:
+  - idafree         # IDA Pro free
+  - binary-ninja    # Binary-ninja demo
 
 pip_packages:
   - numpy

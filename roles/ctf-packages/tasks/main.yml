@@ -5,3 +5,13 @@
     state: present
   with_items: "{{ homebrew_packages_ctf }}"
   when: install_homebrew_ctf
+  tags:
+    - ctf
+
+- name: install hombrew cask apps ( CTF )
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items: "{{ homebrew_cask_ctf }}"
+  when: install_homebrew_cask_ctf
+  tags:
+    - ctf
