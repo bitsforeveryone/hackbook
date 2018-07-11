@@ -6,6 +6,8 @@
   with_items:
     - virtualenv
     - virtualenvwrapper
+  tags:
+    - skipci
 
 - name: Ensure the virtualenv directory exists
   file:
