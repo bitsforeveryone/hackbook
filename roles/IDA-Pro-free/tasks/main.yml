@@ -1,0 +1,44 @@
+---
+# tasks file for ida-pro-demo
+
+- stat: 
+    path: /Applications/{{ appName }}.app
+  register: app_exists
+
+- name: create tmp directory
+  file:
+    path: ./tmp
+    state: directory
+    mode: 0755
+  when: app_exists.stat.exists == false
+
+- name: Download IDA free tgz
+  unarchive:
+    src: "{{ download_link_mac }}" 
+    dest: ./tmp/
+    remote_src: yes
+
+- name: find app file
+  find: 
+    paths: "./tmp/{{ appName }}"
+    file_type: directory
+    patterns: '*.app'
+  register: install_names
+
+- debug:
+    msg: "found {{ item }}"
+  with_items: "{{ install_names.files }}"
+
+- name: Install {{ appName }} pkg 
+  command: ./tmp/idafree-7.0-osx-installer.app/Contents/MacOS/installbuilder.sh --mode unattended
+  when: 
+    - app_exists.stat.exists == False
+  become: yes
+
+
+- name: remove tmp directory
+  file:
+    path: ./tmp
+    state: absent
+  when: app_exists.stat.exists == False
+

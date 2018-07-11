@@ -1,7 +1,7 @@
 ---
 #  https://git.eecs.net/C3T/BinaryNinja.git
-- src: https://git.eecs.net/C3T/BinaryNinja
+- src: git+https://git.eecs.net/C3T/BinaryNinja.git
   version: master
 #  https://git.eecs.net/C3T/IDA-Pro-demo.git
-- src: https://git.eecs.net/C3T/IDA-Pro-demot
+- src: git+https://git.eecs.net/C3T/IDA-Pro-demo.git
   version: master

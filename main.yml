@@ -12,8 +12,10 @@
 #  - brew-cask-extra
 #  - ctf-packages
 #  - role: ohmyzsh
-#  - role: ida-pro-demo
+#  - role: ida-pro-free
+#    tags: ['IDA']
 #  - role: BinaryNinja
+#    tags: ['Binja']
 #  - role: passwordless-sudo
 #  - role: android
    - dotfiles

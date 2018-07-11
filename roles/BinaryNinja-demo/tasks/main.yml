@@ -1,0 +1,58 @@
+---
+# tasks file for BinaryNinja
+- stat: 
+    path: /Applications/{{ appName }}.app
+  register: app_exists
+
+- name: create tmp directory
+  file:
+    path: ./tmp
+    state: directory
+    mode: 0755
+  when: app_exists.stat.exists == false
+
+- get_url: 
+    url: "{{ dmgURL }}" 
+    dest: ./tmp/{{ appName }}.dmg
+  when: app_exists.stat.exists == False
+
+- command: hdiutil attach "./tmp/{{ appName }}.dmg" -nobrowse -mountpoint "./tmp/{{ appName }}"
+  when: app_exists.stat.exists == False
+
+- name: find app file
+  find: 
+    paths: "./tmp/{{ appName }}"
+    file_type: directory
+    patterns: '*.app'
+  register: install_names
+
+- debug:
+    msg: "found {{ item }}"
+  with_items: "{{ install_names.files }}"
+
+- name: copy app to /Applications
+  copy:
+    src: "{{ item.path }}" 
+    dest: "/Applications/"
+  when:
+    - app_exists.stat.exists == False
+    - installer_type == 'app'
+    - install_names|success
+  with_items: "{{ install_names.files }}"
+
+- name: Install {{ appName }} pkg 
+  command: installer -allowUntrusted -pkg "./tmp/{{ appName }}/*.pkg" -target / 
+  when: 
+    - app_exists.stat.exists == False
+    - installer_type == 'pkg'
+  become: yes
+
+- command: hdiutil detach "./tmp/{{ appName }}/"
+  when: app_exists.stat.exists == False
+
+- name: remove tmp directory
+  file:
+    path: ./tmp
+    state: absent
+  when: app_exists.stat.exists == False
+

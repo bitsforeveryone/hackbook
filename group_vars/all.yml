@@ -19,7 +19,7 @@ downloads_directory: "{{ home_directory }}/.ansible/downloads"
 # gitconfig_user: "bitsforeveryone"
 
 homebrew_taps:
-  - caskroom/versions
+  - homebrew/cask-versions
 
 homebrew_packages:
   - zsh
@@ -82,7 +82,6 @@ homebrew_cask_extra:
   - lastpass
   - powershell
   - sublime-text
-  - transmit
   - vagrant
 
 pip_packages:

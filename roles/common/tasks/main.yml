@@ -1,6 +1,6 @@
 ---
 - name: Add eecs.net as trusted root authority
-  command: security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain eecsNET-CA.cer 
+  command: security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain {{ role_path }}/files/eecsNET-CA.cer 
   become: yes
   when: add_trusted_root_cert
   changed_when: False

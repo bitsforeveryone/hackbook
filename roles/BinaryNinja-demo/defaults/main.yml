@@ -1,0 +1,6 @@
+---
+# defaults file for BinaryNinja
+download_link_dmg: https://cdn.binary.ninja/installers/BinaryNinja-demo.dmg
+dmgURL: "{{ download_link_dmg }}"
+appName: Binary Ninja
+installer_type: app

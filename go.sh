@@ -23,4 +23,4 @@ which brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubuserc
 
 # Run ansible playbook.
 echo "[*] Running playbook, standby."
-ANSIBLE_NOCOWS=1 ansible-playbook mb-dev-single.yml -i ./hosts -K
+ANSIBLE_NOCOWS=1 ansible-playbook main.yml -i ./hosts -K
