@@ -15,7 +15,8 @@ echo 'export PATH=/usr/local/bin:/usr/local/sbin:$PATH' > ~/.profile
 
 # Install PIP, if not already installed
 which pip > /dev/null || echo "[*] Installing python pip"
-which pip > /dev/null || brew install python 
+which pip > /dev/null || brew install python@2
+hash -r
 
 # Install Ansible, if not already installed
 #  ref: http://docs.ansible.com/ansible/latest/intro_installation.html#latest-releases-via-pip

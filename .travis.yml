@@ -7,23 +7,23 @@ osx_image: xcode9.3
 
 
 before_install:
-  # Homebrew defaults to Python 3
+  # Homebrew defaults to Python
   - brew update
   - export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  - brew upgrade python
-  - which python3
+  - brew upgrade python@2
+  - hash -r
+  - which python
   
   # Update pip
   # - sudo -H pip install -U pip
     
   # Install Ansible.
-  - sudo -H pip3 install ansible
+  - sudo -H pip install ansible
   
   # Check version
-  - python3 --version
+  - python --version
   - ansible --version
-  - pip3 --version
-
+  - pip --version
 
 install:
 
