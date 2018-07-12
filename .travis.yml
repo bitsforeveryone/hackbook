@@ -9,7 +9,7 @@ osx_image: xcode9.3
 before_install:
   # Check Python version
   - brew update
-  - brew install python
+  - export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   - which python
   
   # Update pip
@@ -21,6 +21,7 @@ before_install:
   # Check version
   - python --version
   - ansible --version
+  - pip --version
 
 
 install:
