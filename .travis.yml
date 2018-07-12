@@ -10,7 +10,6 @@ before_install:
   # Homebrew defaults to Python
   - brew update
   - export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  - brew install --force python@2
   - hash -r
   - which python
   
