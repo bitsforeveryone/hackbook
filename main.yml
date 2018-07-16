@@ -20,4 +20,5 @@
    - role: passwordless-sudo
 #  - role: android
    - dotfiles
+   - dock
 

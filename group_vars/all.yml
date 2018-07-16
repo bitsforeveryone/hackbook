@@ -46,7 +46,8 @@ homebrew_packages:
   - openvpn
   - p7zip
   - pv        # Monitor data's progress through a pipe
-  - python
+  - python    # this is python 3
+  - python@2  # should be installed already
   - qemu
   - readline  # Library for command-line editing
   - socat
@@ -97,7 +98,6 @@ pip_packages:
   - numpy
   - requests
   - unicorn
-  - virtualenvwrapper
 
 gem_packages:
   - zsteg
