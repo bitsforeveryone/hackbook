@@ -6,23 +6,30 @@ language: generic
 osx_image: xcode9.3
 
 
+branches:
+  only:
+    - master
+
 before_install:
-  # Homebrew defaults to Python
-  - brew update
-  - export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  - hash -r
+  # check versions
   - which python
+  - pip --version
+
+  # Setup virtualenv
+  # - sudo - pip install -U virtualenv
+  # virtualenv --version
+  # virtualenv .venv
+  # source .venv/bin/activate
   
-  # Update pip
-  # - sudo -H pip install -U pip
-    
   # Install Ansible.
   - sudo -H pip install ansible
+  - sudo -H pip install yamllint
+  - sudo -H pip install ansible-lint
   
   # Check version
-  - python --version
   - ansible --version
-  - pip --version
+  - ansible-lint --version
+  - yamllint --version
 
 install:
 
@@ -35,6 +42,12 @@ install:
   - "echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible/hosts > /dev/null"
 
 script:
+  # Lint all YAML files
+  # - yamllint .
+
+  # Lint the playbook
+  ansible-lint -x ANSIBLE0013,ANSIBLE0004 main.yml
+
   # Check the role/playbook's syntax.
   - "ansible-playbook main.yml --syntax-check"
 
@@ -49,4 +62,4 @@ script:
     | grep -q 'failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
-    #     | grep -q 'changed=0.*failed=0'
+    | grep -q 'changed=0.*failed=0'

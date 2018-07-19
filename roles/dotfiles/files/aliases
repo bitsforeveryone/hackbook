@@ -7,6 +7,9 @@ alias ts='tmux new-session -s'
 alias va='vagrant'
 alias vg='valgrind --leak-check=full --show-possibly-lost=no --dsymutil=yes'
 
+# Brew
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+
 # Git.
 alias gs='git status'
 alias gc='git commit'
